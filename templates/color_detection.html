@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Detection</title>
+    <link rel="stylesheet" href="static/style.css">
+    <style>
+        body {
+            background-image: url(https://i.pinimg.com/736x/c3/f8/2c/c3f82c88189e2c4bb3eec20ec6906d36.jpg);
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: black;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #video-container {
+            position: relative;
+        }
+
+        #video {
+            width: 640px;
+            height: 480px;
+        }
+
+        #color-info {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('index') }}" class="logo"> <!-- Use url_for to link to routes -->
+            <img src="{{ url_for('static', filename='colorsplitlogo.png') }}" alt="ColorSplit Logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('signup') }}">Sign up</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+        </ul>
+    </div>
+    
+    <h1 style="color: white;">Color Detection</h1>
+    <div id="video-container">
+        <img id="video" src="{{ url_for('video_feed') }}" width="640" height="480" alt="Video Feed">
+    </div>
+    <div id="color-info" color>Hover over the video to detect colors</div>
+
+    <script>
+        const videoElement = document.getElementById('video');
+        const colorInfo = document.getElementById('color-info');
+
+        // Capture mouse movement over the video
+        videoElement.addEventListener('mousemove', function(event) {
+            const rect = videoElement.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+
+            // Send coordinates to the server for color detection
+            fetch('/detect_color', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ x: x, y: y }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                colorInfo.textContent = `Detected Color: ${data.color}`;
+                colorInfo.style.color='white';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>

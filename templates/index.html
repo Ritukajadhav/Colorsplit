@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('index') }}" class="logo"> <!-- Use url_for to link to routes -->
+            <img src="{{ url_for('static', filename='colorsplitlogo.png') }}" alt="ColorSplit Logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('signup') }}">Sign up</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+        </ul>
+    </div>
+    
+    <div id="main">
+        <div id="part1"></div>
+        <div id="part2">
+            <div id="overlay"></div>
+        </div>
+        <div id="part3"></div>
+        <div id="text-div">
+
+            <h1>Did you know</h1>
+            <h1>8 out of 100
+            </h1>
+            <h1> People are  potentially</h1>
+            <h1>
+                Color blind?
+            </h1>
+            
+            <h1>Do you think </h1>
+            <h1>You're one of them?</h1>
+        
+        </div>
+        <div id="small-img-div">
+           <div id="overlay"></div>
+
+        </div>
+
+        <!-- <div id="vertical-text">
+            <h1>
+                Color Contrast
+            </h1>
+        </div> -->
+
+        <!-- start test button at the bottom -->
+    <div id="bottom-button-container">
+        <a href="https://www.colorlitelens.com/mosaic-test.html" id="bottom-button">Start Color Test</a>
+        <a href="{{ url_for('color_detection') }}" class="bottom-button">Detect Color</a>
+    </div>
+    
+    
+    </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('index') }}" class="logo">
+            <img src="{{ url_for('static', filename='colorsplitlogo.png') }}" alt="ColorSplit Logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('signup') }}">Sign up</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+        </ul>
+    </div>
+    <div class="contact-container">
+        <div class="contact-card">
+            <img src="{{ url_for('static', filename='janhavi.jpg') }}" alt="Profile 1" class="profile-image">
+            <h3>Janhavi Sharma</h3>
+            <a href="https://www.linkedin.com/in/janhavi-sharma-a6938525a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2BZfXPtPVRsmWJi5VP6Q02g%3D%3D" class="linkedin-link" target="_blank">LinkedIn</a>
+            <p>Email: janhavisharma474@gmail.com</p>
+        </div>
+        <div class="contact-card">
+            <img src="{{ url_for('static', filename='sejal.jpg') }}" alt="Profile 2" class="profile-image">
+            <h3>Sejal Hode</h3>
+            <a href="http://linkedin.com/in/sejal-h-629404195" class="linkedin-link" target="_blank">LinkedIn</a>
+            <p>Email: sejalhode@gmail.com</p>
+        </div>
+        <div class="contact-card">
+            <img src="{{ url_for('static', filename='ritu.jpg') }}" alt="Profile 3" class="profile-image">
+            <h3>Rituka Jadhav</h3>
+            <a href="https://www.linkedin.com/in/rituka-jadhav-137a38317?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BASIOM%2FBeQtCCoVTRWlKdpQ%3D%3D" class="linkedin-link" target="_blank">LinkedIn</a>
+            <p>Email: jadhavritu30@gmail.com</p>
+        </div>
+        <div class="contact-card">
+            <img src="{{ url_for('static', filename='ayushi.jpg') }}" alt="Profile 4" class="profile-image">
+            <h3>Ayushi Pande</h3>
+            <a href="https://www.linkedin.com/in/ayushi-pande-8ba311263" class="linkedin-link" target="_blank">LinkedIn</a>
+            <p>Email: pandeayushi74@gmail.com</p>
+        </div>
+    </div>
+</body>
+</html>

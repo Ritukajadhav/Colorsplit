@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Color Differentiation Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('index') }}" class="logo">
+            <img src="{{ url_for('static', filename='colorsplitlogo.png') }}" alt="ColorSplit Logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('signup') }}">Sign up</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+        </ul>
+    </div>
+    
+    <div class="about-container">
+        <section class="hero-section">
+            <div class="hero-text">
+                <h1>About Our Project</h1>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="content-box">
+                <h2>Project Overview</h2>
+                <p>This project aims to assist individuals with color vision deficiencies in distinguishing between colors more effectively. Through our interactive web application, we provide innovative tests and tools that enhance color differentiation, making the world more accessible for everyone.</p>
+            </div>
+
+            <div class="content-box">
+                <h2>Features and Functionality</h2>
+                <ul>
+                    <li><strong>Mosaic Color Blindness Test:</strong> Identify colors hidden within mosaic patterns, with multiple levels of difficulty.</li>
+                    <li><strong>Color Detection:</strong> Detection of color by using real-time camera.</li>
+                    <li><strong>User-Friendly Interface:</strong> Designed with accessibility in mind, ensuring ease of use for all users.</li>
+                </ul>
+            </div>
+
+            <div class="content-box">
+                <h2>Technology Stack</h2>
+                <p>We built this project using a combination of HTML, CSS for Frontend, Python and JavaScript for Backend, with a focus on responsive design and accessibility. Our goal is to create a seamless experience for all users, regardless of their device or visual abilities.</p>
+            </div>
+
+            <div class="content-box">
+                <h2>How It Works</h2>
+                <p>Our application guides users through a series of tests designed to assess and improve their color differentiation abilities. With clear instructions and intuitive design, users can easily navigate the tests and gain valuable insights into their color vision.</p>
+            </div>
+
+            <div class="content-box">
+                <h2>Future Enhancements</h2>
+                <p>We are constantly working to improve our project. Future updates will include more advanced tests, mobile app development, and community feedback integration to ensure our project remains at the forefront of accessibility innovation.</p>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <h2>Meet the Team</h2>
+            <div class="team-container">
+                <div class="team-member">
+                    <img src="{{ url_for('static', filename='janhavi.jpg') }}" alt="Janhavi Sharma">
+                    <h3>Janhavi Sharma</h3>
+                </div>
+                <div class="team-member">
+                    <img src="{{ url_for('static', filename='sejal.jpg') }}" alt="Sejal Hode">
+                    <h3>Sejal Hode</h3>
+                </div>
+                <div class="team-member">
+                    <img src="{{ url_for('static', filename='ritu.jpg') }}" alt="Rituka Jadhav">
+                    <h3>Rituka Jadhav</h3>
+                </div>
+                <div class="team-member">
+                    <img src="{{ url_for('static', filename='ayushi.jpg') }}" alt="Ayushi Pande">
+                    <h3>Ayushi Pande</h3>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
